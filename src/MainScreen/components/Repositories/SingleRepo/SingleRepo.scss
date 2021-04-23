@@ -14,16 +14,14 @@
     box-shadow: 0px 6px 15px rgba(227, 227, 227, 0.15);
     color: $darkText;
     .single-repository-title{
-        max-width: 10%;
         font-weight: 500;
         font-size: $fontTitle;
     }
     .single-repository-description{
-        max-width: 45%;
+        max-width: 45ch;
         font-size: $fontBase;
     }
     .single-repository-specs{
-        max-width: 45%;
         padding: 0;
         margin: 0;
         list-style: none;

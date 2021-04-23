@@ -7,39 +7,28 @@ import Header from './components/Header/Header'
 import Navbar from './components/Navbar/Navbar';
 import Repositories from './components/Repositories/Repositories';
 
-import { getUserData, getUserRepos } from '../api/api';
+import { getUserData, getAllRepos } from '../api/api';
+
+import { sortArrayByStargazersCount } from './helpers/helpers'
 
 function App() {
-
   const [userReposData, setUserReposData] = useState([]);
   const [userData, setUserData] = useState([]);
   const [currentUser, setCurrentUser] = useState('frozenfang');
 
-  useEffect(() => {
-    let mounted = true;
-    getUserRepos(currentUser)
-      .then(data => {
-        if (mounted) {
-          setUserReposData(data)
-        }
-      })
-    getUserData(currentUser)
-    .then(data => {
-      if (mounted) {
-        setUserData(data)
-      }
-    })
-    return () => mounted = false;
-  }, [])
-
   const handleUserChange = async (username) => {
-    const reposData = await getUserRepos(username);
     const userData = await getUserData(username);
-    setUserReposData(reposData)
+    const reposData = await getAllRepos(username, userData.public_repos)
+
+    let temp = sortArrayByStargazersCount(reposData);
+
+    setUserReposData(temp)
     setUserData(userData)
-    console.log(reposData)
-    console.log(userData)
   }
+
+  useEffect(() => {
+    handleUserChange(currentUser);
+  }, [])
 
   return (
     <main className="App-wrapper">

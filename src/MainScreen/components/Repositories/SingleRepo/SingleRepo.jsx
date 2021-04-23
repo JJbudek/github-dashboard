@@ -1,17 +1,25 @@
 import './SingleRepo.scss';
 import { BiGitRepoForked, BiStar, BiAlarmExclamation, BiRefresh } from 'react-icons/bi';
 
-function SingleRepo(data) {
+function SingleRepo({
+  name,
+  description,
+  language,
+  stargazers,
+  openIssues,
+  forks,
+  updatedAt
+}) {
   return (
     <div className="single-repository">
-      <span className="single-repository-title">{data.name}</span>
-      <p className="single-repository-description">{data.description}</p>
+      <span className="single-repository-title">{name || 'Name not specified'}</span>
+      <p className="single-repository-description">{description || 'Description not specified'}</p>
       <ul className="single-repository-specs">
-        <li>{data.language}</li>
-        <li><BiStar/>{data.stargazers}</li>
-        <li><BiAlarmExclamation/>{data.openIssues}</li>
-        <li><BiGitRepoForked/>{data.forks}</li>
-        <li><BiRefresh/>Last update: {data.updatedAt}</li>
+        <li>{language || 'Language not specified'}</li>
+        <li><BiStar/>{stargazers}</li>
+        <li><BiAlarmExclamation/>{openIssues}</li>
+        <li><BiGitRepoForked/>{forks}</li>
+        <li><BiRefresh/>Last update: {updatedAt}</li>
       </ul>
     </div>
   );

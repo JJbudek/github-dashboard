@@ -3,9 +3,7 @@ import './Repositories.scss';
 
 
 function Repositories({data}) {
-  if(data.length < 1){
-    return(<p>loading..</p>);
-  }
+  if (!data || data.length === 0) return <p>No repos, sorry</p>;
   return (
     <section className="repositories">
       <span className="repositories-counter">Total repositories (<span>{data.length}</span>)</span>
