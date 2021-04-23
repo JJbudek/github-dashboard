@@ -1,0 +1,12 @@
+@import '../../styleVariables/Global.scss';
+
+.repositories{
+    padding: 25px 25px;
+    .repositories-counter{
+        font-size: 18px;
+        color: $lightText;
+        span{
+            color: $mainBlue;
+        }
+    }
+}

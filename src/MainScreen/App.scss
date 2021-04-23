@@ -1,4 +1,12 @@
-.App-wrapper {
-  text-align: center;
+.App-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.content-wrapper{
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  flex: 1 0 auto;
+  background-color: #F7F8FC;
 }
 

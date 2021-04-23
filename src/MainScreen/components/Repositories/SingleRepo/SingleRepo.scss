@@ -1,0 +1,39 @@
+@import '../../../styleVariables/Global.scss';
+
+.single-repository{
+    display: flex;
+    align-items: center;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    background-color: #fff;
+    height: 120px;
+    margin: 25px 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-left: 6px solid $mainBlue;
+    box-shadow: 0px 6px 15px rgba(227, 227, 227, 0.15);
+    color: $darkText;
+    .single-repository-title{
+        max-width: 10%;
+        font-weight: 500;
+        font-size: $fontTitle;
+    }
+    .single-repository-description{
+        max-width: 45%;
+        font-size: $fontBase;
+    }
+    .single-repository-specs{
+        max-width: 45%;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        display: inline-flex;
+        font-size: $fontBase;
+        li{
+            padding-right: 25px;
+            svg{
+                padding-right: 10px;
+            }
+        }
+    }
+}
