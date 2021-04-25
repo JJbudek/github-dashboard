@@ -56,8 +56,8 @@
 
   @media(max-width: 992px){
       .header{
-        width: 40px;
-        min-width: 40px;
+        width: 0px;
+        min-width: 0px;
         img, .header-member-data, .header-member-date, .header-member-name{
             opacity: 0;
         }

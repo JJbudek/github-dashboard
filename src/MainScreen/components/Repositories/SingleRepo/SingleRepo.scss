@@ -18,6 +18,11 @@
         font-size: $fontTitle;
         max-width: 20ch;
         padding-right: 20px;
+        transition: 0.3s;
+        cursor: pointer;
+        &:hover{
+            color: $mainBlue;
+        }
     }
     .single-repository-description{
         flex: 2;
@@ -34,10 +39,20 @@
         list-style: none;
         font-size: $fontBase;
         li{
+            white-space: nowrap;
             padding-right: 25px;
             svg{
                 padding-right: 10px;
             }
         }
+    }
+}
+
+
+@media(max-width: 1400px){
+    .single-repository{
+        padding: 20px 30px;
+        align-items: flex-start;
+        flex-flow: column wrap;
     }
 }

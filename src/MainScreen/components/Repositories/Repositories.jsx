@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import SingleRepo from './SingleRepo/SingleRepo'
 import Pagination from './Pagination/Pagination'
@@ -18,6 +18,10 @@ const Repositories = ({ data }) => {
   // Change page
   const paginate = pageNumber => setCurrentPage(pageNumber);
   
+  // When there is a props change (user switched) we reset current page to 1
+  useEffect(() => {
+    setCurrentPage(1)
+  }, [data])
 
   if (!data || data.length === 0) return <p>No repos, sorry</p>;
   return (
@@ -34,6 +38,7 @@ const Repositories = ({ data }) => {
             forks={user.forks_count}
             openIssues={user.open_issues_count}
             updatedAt={user.updated_at.substring(0, 10)}
+            url={user.html_url}
           />
         )
       })}
