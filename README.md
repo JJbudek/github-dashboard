@@ -47,4 +47,4 @@ The main requirements specified by allegro team was that the application consist
 1. `Form` which would allow users to enter specified github user username.
 2. `List` which would display specified user public repositories sorted by stars count</br>
 
-I've decided to add a 3rd main component which in my case is `Header`. `Header as you can see on the design mockup is the left panel which displays basic user data. For simplicity `Header` wont show on mobile devices.
+I've decided to add a 3rd main component which in my case is `Header`. `Header` as you can see on the design mockup is the left panel which displays basic user data. For simplicity `Header` wont show on mobile devices.
