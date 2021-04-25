@@ -11,19 +11,24 @@ import { getUserData, getAllRepos } from '../api/api';
 
 import { sortArrayByStargazersCount } from './helpers/helpers'
 
-function App() {
+const App = () => {
   const [userReposData, setUserReposData] = useState([]);
   const [userData, setUserData] = useState([]);
   const [currentUser, setCurrentUser] = useState('frozenfang');
 
   const handleUserChange = async (username) => {
-    const userData = await getUserData(username);
-    const reposData = await getAllRepos(username, userData.public_repos)
+    try {
+      const userData = await getUserData(username);
+      const reposData = await getAllRepos(username, userData.public_repos);
+      
+      let sortedReposArray = sortArrayByStargazersCount(reposData);
 
-    let temp = sortArrayByStargazersCount(reposData);
-
-    setUserReposData(temp)
-    setUserData(userData)
+      setUserReposData(sortedReposArray)
+      setUserData(userData)
+      
+    } catch {
+      alert('Are you sure that you entered an exisiting username?')
+    }
   }
 
   useEffect(() => {
@@ -31,13 +36,15 @@ function App() {
   }, [])
 
   return (
+    <div>
     <main className="App-wrapper">
       <Header data={userData}></Header>
       <section className="content-wrapper">
         <Navbar fct={handleUserChange}></Navbar>
-        <Repositories data={userReposData}/>
+        <Repositories data={userReposData} />
       </section>
     </main>
+    </div>
   );
 }
 

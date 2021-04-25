@@ -5,15 +5,19 @@
     flex-direction: column;
     align-items: center;
     width: 300px;
-    min-width: 250px;
+    min-width: 200px;
     padding-top: 55px;
     box-shadow: 10px 0px 25px rgba(0, 0, 0, 0.05);
     z-index: 1;
     text-align: center;
+    transition: min-width 0.5s ease-in-out, width 0.5s ease-in-out;
     img{
         max-width: 130px;
         max-height: 130px;
         border-radius: 50%;
+        opacity: 1;
+        transition-delay: 1s;
+        transition: opacity 0.3s ease-in-out;
     }
     .header-member-name{
         font-size: $fontTitle;
@@ -21,17 +25,26 @@
         font-weight: 500;
         padding-top: 20px;
         padding-bottom: 10px;
+        opacity: 1;
+        transition-delay: 1s;
+        transition: opacity 0.3s ease-in-out;
     }
     .header-member-date{
         font-size: $fontBase;
         color: $darkText;
         padding-bottom: 10px;
+        opacity: 1;
+        transition-delay: 1s;
+        transition:  opacity 0.3s ease-in-out;
     }
     .header-member-data{
         font-size: $fontBase;
         color: $darkText;
         padding: 0;
         list-style: none;
+        opacity: 1;
+        transition-delay: 1s;
+        transition: opacity 0.3s ease-in-out;
         li{
             padding: 10px 0;
             div{
@@ -39,4 +52,14 @@
             }
         }
     }
+  }
+
+  @media(max-width: 992px){
+      .header{
+        width: 40px;
+        min-width: 40px;
+        img, .header-member-data, .header-member-date, .header-member-name{
+            opacity: 0;
+        }
+      }
   }

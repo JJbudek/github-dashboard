@@ -6,26 +6,32 @@
     flex-flow: row wrap;
     justify-content: space-between;
     background-color: #fff;
-    height: 120px;
+    min-height: 120px;
     margin: 25px 0;
-    padding-left: 30px;
-    padding-right: 30px;
+    padding: 0 30px;
     border-left: 6px solid $mainBlue;
     box-shadow: 0px 6px 15px rgba(227, 227, 227, 0.15);
     color: $darkText;
     .single-repository-title{
+        flex: 1;
         font-weight: 500;
         font-size: $fontTitle;
+        max-width: 20ch;
+        padding-right: 20px;
     }
     .single-repository-description{
+        flex: 2;
         max-width: 45ch;
         font-size: $fontBase;
+        padding-right: 20px;
     }
     .single-repository-specs{
+        display: flex;
+        flex: 2;
+        justify-content: flex-end;
         padding: 0;
         margin: 0;
         list-style: none;
-        display: inline-flex;
         font-size: $fontBase;
         li{
             padding-right: 25px;

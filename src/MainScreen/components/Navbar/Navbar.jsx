@@ -1,7 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+
+import { removeSpacesFromString } from './../../helpers/helpers' 
+
 import './Navbar.scss';
 
-function Navbar(props) {
+const Navbar = (props) => {
   
   const [userName, setUserName] = useState(['']);
 
@@ -16,7 +19,9 @@ function Navbar(props) {
           className="navbar-input"
         />
         <button
-          onClick={() => props.fct(userName)}
+          onClick={() =>{
+            props.fct(removeSpacesFromString(userName))
+          }}
           className="navbar-button"
           type='submit'>Submit
         </button>

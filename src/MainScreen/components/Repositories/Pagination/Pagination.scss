@@ -1,0 +1,24 @@
+@import '../../../styleVariables/Global.scss';
+
+.pagination{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .pagination-page-item{
+        padding-right: 20px;
+        display: inline-flex;
+        .pagination-page-link{
+            text-decoration: none;
+            font-size: $fontSubtitle;
+            color: $darkText;
+            transition: 0.3s;
+            &:hover{
+                color: $mainBlue;
+            }
+        }
+        .active{
+            color: $mainBlue;
+            border-bottom: 1px solid $mainBlue;
+        }
+    }
+}

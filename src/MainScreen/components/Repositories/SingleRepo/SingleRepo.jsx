@@ -1,7 +1,7 @@
 import './SingleRepo.scss';
 import { BiGitRepoForked, BiStar, BiAlarmExclamation, BiRefresh } from 'react-icons/bi';
 
-function SingleRepo({
+const SingleRepo = ({
   name,
   description,
   language,
@@ -9,7 +9,7 @@ function SingleRepo({
   openIssues,
   forks,
   updatedAt
-}) {
+}) => {
   return (
     <div className="single-repository">
       <span className="single-repository-title">{name || 'Name not specified'}</span>
