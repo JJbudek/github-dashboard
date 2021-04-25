@@ -2,7 +2,8 @@ import './SingleRepo.scss';
 import { BiGitRepoForked, BiStar, BiAlarmExclamation, BiRefresh } from 'react-icons/bi';
 
 const handleRepoClick = (url) => {
-  return window.open(url)
+  window.open(url);
+  return false
 }
 
 const SingleRepo = ({

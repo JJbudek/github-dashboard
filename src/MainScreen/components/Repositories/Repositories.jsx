@@ -16,7 +16,7 @@ const Repositories = ({ data }) => {
   const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
 
   // Change page
-  const paginate = pageNumber => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
   
   // When there is a props change (user switched) we reset current page to 1
   useEffect(() => {
