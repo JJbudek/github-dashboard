@@ -1,71 +1,37 @@
-# Getting Started with Create React App
+# Github Dashboard
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple react.js project created for a task assaigned by allegro team as a part of recrutation for Summer e-Xperience 2021.
+![alt text](https://assets.allegrostatic.com/opbox/allegro.pl/praca/SummerEXperience2017/6NLsgapwsVFBO80mFbO3cx-w1920-h360.png "summer experience logo")
+## Instalation
 
-## Available Scripts
+Simply clone this repo or download a zipped version.
+Navigate to application root foler (folder by default should be called `github-dashboard-main`) using terminal of your choice and then run
+`npm install`
+once the installastion is over, simply start the web server by typing:
+`npm start`
+By now the server should be running and you can access it by navigation to
+[http://localhost:3000](http://localhost:3000)
 
-In the project directory, you can run:
+## App structure
+![alt text](https://i.ibb.co/FqfB6Td/diagram.png "Application structure diagram")
 
-### `npm start`
+##### App.js
+App.js serves as a main wrapper for thr whole application. It also holds its "main" state. This component communicates with `Api` and `Helpers` classes and uses functions specified there.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+##### Header
+A component designed to present specified user data.
+##### Navbar
+A component which main role is to get desired person username and later pass it to `App.js` and finally `API` in order of getting specified user data.
+##### Repositories
+Repositories component serves as a wrapper for `singleRepo` components as well as `pagination`.
+##### SingleRepo
+SingleRepo displays single repository data. 
+##### Pagination
+Pagination is a component which serves as a simple navigation for `Repositories` wrapper. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Design
+For the design part of application i decided to stick to something simple yet modern.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![alt text](https://i.ibb.co/bJHQ4f7/Web-1920-1.png "Application structure diagram")
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-"# github-dashboard" 

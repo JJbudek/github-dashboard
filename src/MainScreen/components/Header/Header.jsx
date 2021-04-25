@@ -1,9 +1,6 @@
-import React, { useState } from 'react';
-
 import './Header.scss';
 
 const Header = ({data}) => {
-  const [isShowin, setIsShowing] = useState(true)
   
   if (!data || data.length === 0) return <p>No repos, sorry</p>;
   return (
